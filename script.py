@@ -3,18 +3,18 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
-# load and investigate the data here:
+#loading data:
 df = pd.read_csv('tennis_stats.csv')
 
-# perform exploratory analysis here:
+#investigating potential relationship between 'Aces' and 'Winnings':
 ax1 = plt.subplot()
-ax1.scatter(df['DoubleFaults'], df['Losses'], alpha=0.3)
-ax1.set_xlabel('Double Faults')
-ax1.set_ylabel('Losses')
+ax1.scatter(df['Aces'], df['Winnings'], alpha=0.3)
+ax1.set_xlabel('Aces')
+ax1.set_ylabel('Winnings')
 plt.show()
 plt.clf()
 
-## perform single feature linear regressions here:
+##linear regression model which predicts losses by double faults:
 X = df[['DoubleFaults']]
 y = df[['Losses']]
 
@@ -35,15 +35,10 @@ plt.clf()
 ax3 = plt.subplot()
 ax3.scatter(X, y, alpha=0.3)
 ax3.plot(x_test, y_predict)
+ax3.set_ylabel('Losses')
+ax3.set_xlabel('Double Faults')
 plt.show()
 plt.clf
-
-
-
-
-
-
-
 
 ## perform two feature linear regressions here:
 
