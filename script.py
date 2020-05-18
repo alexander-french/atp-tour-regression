@@ -42,17 +42,22 @@ plt.clf
 
 ## perform two feature linear regressions here:
 
+X2 = df[['Aces', 'BreakPointsConverted']]
+y2 = df[['Winnings']]
 
+x2_train, x2_test, y2_train, y2_test = train_test_split(X, y, train_size=0.8, test_size=0.2)
+mlr = LinearRegression()
+mlr.fit(x_train, y_train)
+y2_predict = regr.predict(x_test)
 
+print(mlr.score(x2_test, y2_test))
 
-
-
-
-
-
-
-
-
+ax4 = plt.subplot()
+ax4.scatter(y2_predict, y2_test, alpha=0.3)
+ax4.set_ylabel('Real values')
+ax4.set_xlabel('Predicted values')
+plt.show()
+plt.clf()
 
 
 
