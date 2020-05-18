@@ -40,7 +40,7 @@ ax3.set_xlabel('Double Faults')
 plt.show()
 plt.clf
 
-## perform two feature linear regressions here:
+##two feature linear regression
 
 X2 = df[['Aces', 'BreakPointsConverted']]
 y2 = df[['Winnings']]
@@ -58,14 +58,3 @@ ax4.set_ylabel('Real values')
 ax4.set_xlabel('Predicted values')
 plt.show()
 plt.clf()
-
-
-
-
-
-
-
-
-
-
-## perform multiple feature linear regressions here:
